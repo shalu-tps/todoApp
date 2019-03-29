@@ -1,0 +1,42 @@
+
+  <!-- <input type="text" #event>
+  <p>{{values}}</p> -->
+<!-- <button (click)="onKey(#event.value)">Click</button>{{hello}} -->
+    
+   <!-- <h1>Lists Name</h1>
+    <input #val ><br>
+    <button (click)="addData(val.value)">Add</button><br>
+ 
+    <ul>
+        <li *ngFor="let dt of arr">
+           {{dt}}
+        </li>
+    </ul> -->
+
+    <!-- <ul>
+        <li>
+         {{arr}}
+        </li>
+    </ul> -->
+
+    <button (click)="add()">Add Me</button> 
+
+    <ul>
+        <li *ngFor="let d of this.ser.s">
+            {{d}}
+            <div *ngIf="d.length">
+                <ul>
+                <input #vl><br>
+                <button (click)="addItem(vl.value)">Add Items</button><br>
+               
+                <li *ngFor="let q of this.ser.arr,let i = index"><br>
+                    <!-- <p *ngIf="q.length"> -->
+                        {{i}}:{{q.name}}
+                        <button (click)="delete(q,i)">delete</button><br>
+                    <!-- </p> -->
+                </li>
+                </ul>    
+            </div>
+            
+        </li>
+    </ul>
