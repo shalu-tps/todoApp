@@ -19,24 +19,26 @@
         </li>
     </ul> -->
 
-    <button (click)="add()">Add Me</button> 
+    <button (click)="addList()">Add Me</button> 
 
     <ul>
-        <li *ngFor="let d of this.ser.s">
-            {{d}}
-            <div *ngIf="d.length">
+        <li *ngFor="let d of this.ser.s;let i=index">
+            {{d.name}}
+            
                 <ul>
                 <input #vl><br>
-                <button (click)="addItem(vl.value)">Add Items</button><br>
-               
-                <li *ngFor="let q of this.ser.arr,let i = index"><br>
+                <button (click)="addItem(vl.value,d)">Add Items</button><br>
+                <!-- <li *ngFor="let q of this.ser.arr.item,let i = index"><br> -->
+                    <li *ngFor="let q of d.items,let j = index"><br>
                     <!-- <p *ngIf="q.length"> -->
-                        {{i}}:{{q.name}}
-                        <button (click)="delete(q,i)">delete</button><br>
+                    <input type="checkbox">
+                        {{q}}
+                    <button (click)="delete(d,j)">delete</button><br>
                     <!-- </p> -->
                 </li>
-                </ul>    
-            </div>
-            
+                <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br>
+                </ul> 
         </li>
     </ul>
+
+

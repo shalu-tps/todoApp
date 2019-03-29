@@ -16,7 +16,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
   }
   private addTodo() {
-    this.user.addTodo(this.name);
+    // this.user.addTodo(this.name);
     this.name = '';
 
   }

@@ -11,37 +11,33 @@ import { Todo } from 'src/app/todo';
 export class DemoComponent implements OnInit {
   constructor(private ser: UserService) {
    }
-
-  hello =  '';
-  values = '';
-  private todo: Todo;
-
- arr = [];
- a1 = [];
+  public todos: Todo[] = [];
+  items: any;
+  arr = [];
+  a1 = [];
+  id: number;
   ngOnInit() {
-
   }
 
-  addData(val: string) {
-    if (val) {
-      this.arr.push(val);
-    }
-    }
-
-  add() {
+  addList() {
     this.ser.getList();
+    localStorage.getItem('data');
   }
 
-  addItem(vl: string) {
-    this.ser.addTodo(vl);
+  addItem(vl: string, d) {
+     console.log(d.addItem(vl));
+     localStorage.setItem('data', JSON.stringify(d));
+    //  this.setValue(d);
+    //  console.log(this.getValue());
     }
 
-  // delete(): void {
-      // this.ser.del(this.todo.id);
-      // return this.ser.getList();
-    // }
     delete(q, index) {
-      this.ser.todos.splice(index, 1);
-      // console.log(this.ser.addTodo);
+     q.deleteItem(index);
     }
-  }
+    // setValue(q) {
+    //   localStorage.setItem('data', JSON.stringify({q}));
+    // }
+    // getValue() {
+    //  return localStorage.getItem('data');
+    // }
+    }

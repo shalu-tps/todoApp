@@ -8,10 +8,8 @@ import Swal from 'sweetalert2';
 export class UserService {
   public arr: Todo[] = [];
   public todos: Todo[];
-  public id: number;
-  public nm: [];
   public s: any[] = [];
-  public x: any[] = [];
+  public localD = localStorage.getItem('data');
   constructor() {
   }
 
@@ -23,21 +21,11 @@ export class UserService {
         input: 'text',
         inputPlaceholder: 'List Name',
       });
-      // if (listName) {
-      //  document.writeln(listName);
-      this.s.push(listName);
-        // Swal.fire('Entered list name is: ' + listName);
-      // }
+      this.s.push(new Todo(Date.now(), listName, []));
       })();
     }
-      public addTodo(vl: string) {
-      const todo = new Todo(this.id, vl);
-      this.arr.push(todo);
-      this.id++;
-      }
 
-      public del(id: number) {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-      }
-
+  // getLocalData() {
+  //   console.log(localStorage.getItem('data'));
+  // }
   }
