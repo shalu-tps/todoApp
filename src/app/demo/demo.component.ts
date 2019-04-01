@@ -2,7 +2,7 @@ import { Component, OnInit , Input } from '@angular/core';
 import Swal from 'sweetalert2';
 import { UserService } from '../user.service';
 import { Todo } from 'src/app/todo';
-
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-demo',
@@ -13,13 +13,24 @@ export class DemoComponent implements OnInit {
   constructor(private ser: UserService) {
    }
   public todos: Todo[] = [];
+  public todo = [];
   items: any;
-  arr = [];
+  public temp;
   a1 = [];
+  value = [];
+  arr = [];
+  result = [];
   id: number;
-  ngOnInit() {
-    }
-
+   console;
+     ngOnInit() {
+    if (localStorage.length > 0) {
+    const temp = localStorage.getItem('todos');
+    this.arr.push(temp);
+    const todo = JSON.parse(JSON.stringify(this.arr || null ));
+    console.log(todo);
+  }
+    // this.getData();
+  }
   addList() {
     this.ser.getList();
   }
@@ -37,11 +48,19 @@ export class DemoComponent implements OnInit {
     //   localStorage.setItem('todos', JSON.stringify({todos}));
     // }
 
-    // item() {
+    getData() {
     // for (let i = 0; i < localStorage.length; i++) {
     //   const key = localStorage.key(i);
     //   const value = localStorage.getItem(key);
     //   console.log(key, value);
     // }
-  // }
-}
+        // const c = this.arr.filter((ele, i) => {
+        // return this.todos;
+        // });
+        // console.log(c);
+  //  let a = this.todos.filter((ele, i) => {
+  //    return (ele.items);
+  //   });
+  //   console.log(a);
+    }
+   }

@@ -25,19 +25,9 @@ export class UserService {
       })();
     }
 
-  // getLocalData() {
-  //   console.log(localStorage.getItem('data'));
-  // }
-
   localStorageData(todos: Todo[]) {
-this.arry.push(localStorage.setItem('todos', JSON.stringify({todos})));
-// const a = this.arry;
-  // this.arry = this.todos;
-  // console.log(this.arry);
-  // localStorage.getItem('todos');
-// console.log(a);
-  // console.log(this.localD);
-for (let i = 0; i < localStorage.length; i++) {
+  localStorage.setItem('todos', JSON.stringify({todos}));
+  for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       const value = localStorage.getItem(key);
       console.log(key, value);

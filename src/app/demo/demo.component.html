@@ -1,45 +1,51 @@
 
-  <!-- <input type="text" #event>
-  <p>{{values}}</p> -->
-<!-- <button (click)="onKey(#event.value)">Click</button>{{hello}} -->
-    
-   <!-- <h1>Lists Name</h1>
-    <input #val ><br>
-    <button (click)="addData(val.value)">Add</button><br>
- 
-    <ul>
-        <li *ngFor="let dt of arr">
-           {{dt}}
-        </li>
-    </ul> -->
-
-    <!-- <ul>
-        <li>
-         {{arr}}
-        </li>
-    </ul> -->
 <div style="text-align:center">    
     <h1>Todo App</h1>
-<br>
-    <button (click)="addList()" class="btn btn-primary btn1">Add Me</button> 
-
+<br> 
+<button (click)="addList()" class="btn btn-primary btn1">Add Me</button> 
+<ul *ngFor="let ls of todo;let i=index">  
+    <li>
+     {{ls}}
+     {{ls.name}}   
+     {{ls.items}}
+    </li> 
+ </ul> 
     <ul>
         <li *ngFor="let d of this.ser.s;let i=index">
             <h3>{{d.name}}</h3>
-                <ul>
-                <input #vl><br>
-                <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
-                <!-- <li *ngFor="let q of this.ser.arr.item,let i = index"><br> -->
-                    <li *ngFor="let q of d.items,let j = index"><br>
-                    <!-- <p *ngIf="q.length"> -->
-                    <input type="checkbox">
+            <ul>
+            <input #vl><br>
+            <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
+             <li *ngFor="let q of d.items,let j = index"><br>
+              <input type="checkbox">
                         {{q}}
-                    <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
-                    <!-- </p> -->
-                </li>
-                <!-- <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
-                </ul> 
+             <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
+             </li>
+            <!-- <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
+            </ul> 
         </li>
     </ul>
+    
 </div>
-
+<!-- <li *ngFor="let ls of arr">
+        <h3>{{ls.name}}</h3>
+        <ul>
+        <input #vl><br>
+        <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
+         <li *ngFor="let q of arr,let j = index"><br>
+          <input type="checkbox">
+                    {{q}}
+         <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
+         </li>
+         <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
+        <!-- </ul> 
+</li> -->
+       <!-- <ul *ngFor="let a of arr"> 
+          <li>{{a}}</li>
+          <ul>
+           <li *ngFor="let b of a.items">
+           {{ b.items}}
+         </li>
+        </ul>
+      </ul> -->
+     

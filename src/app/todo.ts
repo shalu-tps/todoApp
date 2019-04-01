@@ -5,7 +5,7 @@ export class Todo {
     // name = new Name();
     name = ({
       name: 'string',
-      checked: false,
+      checked: true,
     });
     items: any[] = [];
 
