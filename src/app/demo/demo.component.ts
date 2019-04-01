@@ -18,16 +18,17 @@ export class DemoComponent implements OnInit {
   public temp;
   a1 = [];
   value = [];
-  arr = [];
+  public arr: any[] = [];
   result = [];
   id: number;
-   console;
+
      ngOnInit() {
     if (localStorage.length > 0) {
     const temp = localStorage.getItem('todos');
     this.arr.push(temp);
-    const todo = JSON.parse(JSON.stringify(this.arr || null ));
-    console.log(todo);
+    const todos = JSON.parse(JSON.stringify(this.arr || null ));
+    console.log(todos);
+    this.ser.s.push(todos);
   }
     // this.getData();
   }
