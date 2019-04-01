@@ -18,27 +18,28 @@
          {{arr}}
         </li>
     </ul> -->
-
-    <button (click)="addList()">Add Me</button> 
+<div style="text-align:center">    
+    <h1>Todo App</h1>
+<br>
+    <button (click)="addList()" class="btn btn-primary btn1">Add Me</button> 
 
     <ul>
         <li *ngFor="let d of this.ser.s;let i=index">
-            {{d.name}}
-            
+            <h3>{{d.name}}</h3>
                 <ul>
                 <input #vl><br>
-                <button (click)="addItem(vl.value,d)">Add Items</button><br>
+                <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
                 <!-- <li *ngFor="let q of this.ser.arr.item,let i = index"><br> -->
                     <li *ngFor="let q of d.items,let j = index"><br>
                     <!-- <p *ngIf="q.length"> -->
                     <input type="checkbox">
                         {{q}}
-                    <button (click)="delete(d,j)">delete</button><br>
+                    <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
                     <!-- </p> -->
                 </li>
-                <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br>
+                <!-- <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
                 </ul> 
         </li>
     </ul>
-
+</div>
 

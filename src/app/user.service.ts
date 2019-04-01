@@ -6,16 +6,16 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class UserService {
-  public arr: Todo[] = [];
+  public arry: any[] = [];
   public todos: Todo[];
   public s: any[] = [];
-  public localD = localStorage.getItem('data');
+  public a: any[] = [];
+  public localD = localStorage.getItem('todos');
   constructor() {
   }
 
   public getList() {
     (async  () => {
-      const arr = [];
       const {value: listName} = await Swal.fire({
         title: 'Input List Name',
         input: 'text',
@@ -28,4 +28,19 @@ export class UserService {
   // getLocalData() {
   //   console.log(localStorage.getItem('data'));
   // }
+
+  localStorageData(todos: Todo[]) {
+this.arry.push(localStorage.setItem('todos', JSON.stringify({todos})));
+// const a = this.arry;
+  // this.arry = this.todos;
+  // console.log(this.arry);
+  // localStorage.getItem('todos');
+// console.log(a);
+  // console.log(this.localD);
+for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      console.log(key, value);
+     }
+    }
   }

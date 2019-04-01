@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { UserService } from '../user.service';
 import { Todo } from 'src/app/todo';
 
+
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
@@ -17,27 +18,30 @@ export class DemoComponent implements OnInit {
   a1 = [];
   id: number;
   ngOnInit() {
-  }
+    }
 
   addList() {
     this.ser.getList();
-    localStorage.getItem('data');
   }
 
   addItem(vl: string, d) {
      console.log(d.addItem(vl));
-     localStorage.setItem('data', JSON.stringify(d));
-    //  this.setValue(d);
-    //  console.log(this.getValue());
+     this.ser.localStorageData(this.ser.s);
     }
 
     delete(q, index) {
      q.deleteItem(index);
     }
-    // setValue(q) {
-    //   localStorage.setItem('data', JSON.stringify({q}));
+
+    // setValue(todos: Todo[]) {
+    //   localStorage.setItem('todos', JSON.stringify({todos}));
     // }
-    // getValue() {
-    //  return localStorage.getItem('data');
+
+    // item() {
+    // for (let i = 0; i < localStorage.length; i++) {
+    //   const key = localStorage.key(i);
+    //   const value = localStorage.getItem(key);
+    //   console.log(key, value);
     // }
-    }
+  // }
+}

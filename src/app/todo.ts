@@ -1,4 +1,3 @@
-import { CheckboxControlValueAccessor } from '@angular/forms';
 
 export class Todo {
     id: number;
