@@ -3,22 +3,6 @@
     <h1>Todo App</h1>
 <br> 
 <button (click)="addList()" class="btn btn-primary btn1">Add Me</button> 
-   <ul>  
-    <li *ngFor="let ls of this.ser.s;let i=index">
-     {{ls}}
-     {{ls.name}}
-    <!-- <ul>  -->
-    <!-- <input #vl><br>
-            <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
-             <li *ngFor="let q of d.items,let j = index"><br>
-              <input type="checkbox">
-                        {{q}}
-             <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
-            </li> 
-        </ul>
-        </li> -->
-   </ul>
-
     <ul>
         <li *ngFor="let d of this.ser.s;let i=index">
             <h3>{{d.name}}</h3>
@@ -30,31 +14,7 @@
                         {{q}}
              <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
              </li>
-            <!-- <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
             </ul> 
         </li>
     </ul>
-    
 </div>
-<!-- <li *ngFor="let ls of arr">
-        <h3>{{ls.name}}</h3>
-        <ul>
-        <input #vl><br>
-        <button (click)="addItem(vl.value,d)" class="btn btn-success btn2 btn-md">Add Items</button><br>
-         <li *ngFor="let q of arr,let j = index"><br>
-          <input type="checkbox">
-                    {{q}}
-         <button (click)="delete(d,j)" class="btn btn-danger btn-xs">delete</button><br>
-         </li>
-         <button (click)="dele(d,j)" value={{d.name}} name='true'>Dele</button><br> -->
-        <!-- </ul> 
-</li> -->
-       <!-- <ul *ngFor="let a of arr"> 
-          <li>{{a}}</li>
-          <ul>
-           <li *ngFor="let b of a.items">
-           {{ b.items}}
-         </li>
-        </ul>
-      </ul> -->
-     

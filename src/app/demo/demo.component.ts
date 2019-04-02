@@ -2,7 +2,6 @@ import { Component, OnInit , Input } from '@angular/core';
 import Swal from 'sweetalert2';
 import { UserService } from '../user.service';
 import { Todo } from 'src/app/todo';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-demo',
@@ -22,46 +21,37 @@ export class DemoComponent implements OnInit {
   result = [];
   id: number;
 
-     ngOnInit() {
+  ngOnInit() {
     if (localStorage.length > 0) {
     const temp = localStorage.getItem('todos');
-    this.arr.push(temp);
-    const todos = JSON.parse(JSON.stringify(this.arr || null ));
-    console.log(todos);
-    this.ser.s.push(todos);
+    const a1 = JSON.parse(temp);
+    this.ser.s = a1.todos;
+
   }
     // this.getData();
   }
   addList() {
     this.ser.getList();
+    this.ser.localStorageData(this.ser.s);
   }
 
   addItem(vl: string, d) {
      console.log(d.addItem(vl));
      this.ser.localStorageData(this.ser.s);
+  }
+
+  delete(q, index) {
+    const todo = this.ser.s.indexOf(index);
+    this.ser.s.splice(todo, 1);
+    this.ser.localStorageData(this.ser.s);
+    q.deleteItem(index);
     }
 
-    delete(q, index) {
-     q.deleteItem(index);
-    }
-
-    // setValue(todos: Todo[]) {
-    //   localStorage.setItem('todos', JSON.stringify({todos}));
-    // }
-
-    getData() {
-    // for (let i = 0; i < localStorage.length; i++) {
-    //   const key = localStorage.key(i);
-    //   const value = localStorage.getItem(key);
-    //   console.log(key, value);
-    // }
-        // const c = this.arr.filter((ele, i) => {
-        // return this.todos;
-        // });
-        // console.log(c);
-  //  let a = this.todos.filter((ele, i) => {
-  //    return (ele.items);
-  //   });
-  //   console.log(a);
-    }
-   }
+  //   getData() {
+  //   for (let i = 0; i < localStorage.length; i++) {
+  //     console.log(localStorage.key(i));
+  //     const value = localStorage.removeItem(key);
+  //     console.log(key, value);
+  //   }
+  //  }
+  }
