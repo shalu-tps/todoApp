@@ -1,12 +1,10 @@
-
 export class Todo {
     id: number;
-    // name: number;
-    // name = new Name();
-    name = ({
-      name: 'string',
-      checked: true,
-    });
+    name: string;
+    // name = ({
+    //   name: 'string',
+    //   checked: true,
+    // });
     items: any[] = [];
 
     constructor(id: number, name, items: []) {
@@ -23,4 +21,9 @@ export class Todo {
    editItem(index, value) {
      this.items[index] = value;
    }
+  //  deleteList(index: number) {
+  //    if (this.items === null) {
+  //     this.name.slice();
+  //    }
+  // }
   }
